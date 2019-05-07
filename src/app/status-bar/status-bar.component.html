@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <span class="body-2">&copy;2018 gobblygeek.com</span>
+  <span class="body-2" *ngIf="(authState | async)"> 
+    {{(userData.name | async)}}: G-{{(userData.gold | async)}} L-{{(userData.level | async)}}
+  </span>
+  <span class="body-2" *ngIf="!(authState | async)"> 
+    Log in to access site.
+  </span>
+</mat-toolbar>
