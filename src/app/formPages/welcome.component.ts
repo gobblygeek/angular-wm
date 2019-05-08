@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "../store/store";
-import { GET_LOGIN_STATE } from "../store/actions";
+import { TOGGLE_LOGIN } from "../store/actions";
 
 @Component({
   selector: 'welcome',
   templateUrl: './welcome.component.html'
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent {
 
   constructor(private ngRedux: NgRedux<IAppState>) { }
 @select() navLinks;
 @select() authState;
-  disabled = true;
-  ngOnInit() {
-  	this.ngRedux.dispatch({ type: GET_LOGIN_STATE });
-    console.log(this.authState)
+
+  login(){
+    this.ngRedux.dispatch({ type: "TOGGLE_LOGIN" });
   }
 
 }

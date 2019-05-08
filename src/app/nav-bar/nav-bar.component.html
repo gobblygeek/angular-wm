@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <!-- This fills the remaining space of the current row -->
-<mat-button-toggle ariaLabel="Nav Menu" disabled="(authState|async)">
+<mat-button-toggle ariaLabel="Nav Menu" [disabled]="!(authState|async)">
     <mat-icon>menu</mat-icon>
   </mat-button-toggle>
   <span>Word Monster </span>

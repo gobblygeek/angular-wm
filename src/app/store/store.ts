@@ -27,6 +27,7 @@ export const INITIAL_STATE: IAppState = {
   }
 };
 export function rootReducer(state, action) {
+  console.log('root reducer called',action)
   switch (action.type) {
     case GET_LOGIN_STATE:
       console.log('in get login state', state.authState)
@@ -34,6 +35,7 @@ export function rootReducer(state, action) {
         authState: state.authState
       });
     case TOGGLE_LOGIN:
+    console.log('in toggle login')
       var newState = !state.authState;
       return Object.assign({}, state, {
         authState: newState
