@@ -1,7 +1,20 @@
 <mat-toolbar color="primary">
-  <!-- This fills the remaining space of the current row -->
-<mat-button-toggle ariaLabel="Nav Menu" [disabled]="!(authState|async)">
+  <button 
+    mat-icon-button
+    color="accent" 
+    ariaLabel="Nav Menu" 
+    [disabled]="!(authState|async)"
+    [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
-  </mat-button-toggle>
+  </button>
+  <mat-menu #menu="matMenu">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let link of(navLinks|async)">
+        <a [routerLink]="link.link">
+          {{link.label}}
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-menu>
   <span>Word Monster </span>
 </mat-toolbar>

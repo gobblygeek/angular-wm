@@ -6,7 +6,8 @@ import { GET_LOGIN_STATE } from "../store/actions";
 
 @Component({
   selector: 'nav-bar',
-  templateUrl: './nav-bar.component.html'
+  templateUrl: './nav-bar.component.html',
+  styleUrls: [ './nav-bar.css' ]
 })
 export class NavBarComponent{
 

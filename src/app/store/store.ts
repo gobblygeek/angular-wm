@@ -18,7 +18,7 @@ export const INITIAL_STATE: IAppState = {
   authState: false,
   userData :{
     userid: null,
-  name: null,
+  name: 'test',
   level: null, 
   att: null, 
   def: null, 
@@ -37,8 +37,12 @@ export function rootReducer(state, action) {
     case TOGGLE_LOGIN:
     console.log('in toggle login')
       var newState = !state.authState;
+      var newUser = userData;
+      var newLinkList = navData;
       return Object.assign({}, state, {
-        authState: newState
+        authState: newState,
+        navLinks: newLinkList,
+        userData: newUser,
       });
     case REMOVE_TODO:
       return Object.assign({}, state, {

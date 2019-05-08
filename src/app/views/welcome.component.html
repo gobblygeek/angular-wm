@@ -24,7 +24,7 @@
 			    <p class="card-text">So, write on my friends. Kick these monster’s tushies. Face the dark
 			            lord. Write your stories.</p>
   </mat-card-content>
-  <mat-card-actions class="mdc-layout-grid__cell">
+  <mat-card-actions class="mdc-layout-grid__cell" *ngIf="!(authState | async)">
     <button mat-raised-button color="primary" (click)="login()">Login</button>
   </mat-card-actions>
       </div>

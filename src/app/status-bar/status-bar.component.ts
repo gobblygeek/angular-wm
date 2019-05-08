@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "../store/store";
@@ -7,12 +7,10 @@ import { IAppState } from "../store/store";
   selector: 'status-bar',
   templateUrl: './status-bar.component.html'
 })
-export class StatusBarComponent implements OnInit {
+export class StatusBarComponent {
 
   constructor(private ngRedux: NgRedux<IAppState>) { }
 @select() authState;
 @select() userData;
-  ngOnInit() {
-  }
 
 }
